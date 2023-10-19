@@ -26,8 +26,8 @@ is the last stage in the selection process for becoming a 42's student.
 	be at ease with such a system.
  
 ### Makefile
-   We used Makefile to define the build process of a project, 
-   specifying dependencies and instructions for compiling source code into executable programs. 
+        We used Makefile to define the build process of a project,
+	specifying dependencies and instructions for compiling source code into executable programs.
 
 ## Soft skills
 
@@ -46,3 +46,8 @@ is the last stage in the selection process for becoming a 42's student.
 	The school is open 24/7. Thus, the so-called "pisciners" are free to work whenever
 	they want, which demands excellent time management skills and resiliency for not
 	"drowning" amid the massive load of work demanded by the non-stop 26-day program.
+
+| SUBJECT | LANGUAGE |
+| -------- | -------- |
+| Row 1, Column 1 | Row 1, Column 2 |
+| Row 2, Column 1 | Row 2, Column 2 |
