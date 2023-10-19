@@ -26,11 +26,11 @@ is the last stage in the selection process for becoming a 42's student.
 	be at ease with such a system.
  
 ### Makefile
-We used Makefile to define the build process of a project,
+	We used Makefile to define the build process of a project,
 	specifying dependencies and instructions for compiling source code into executable programs.
  
 ### Unix
-We learned how to work. Unix proficiency has allowed us to efficiently manage files,
+	We learned how to work. Unix proficiency has allowed us to efficiently manage files,
 	run programs, and carry out various tasks through the command line interface. 
 	These skills have not only improved our productivity but also deepened our understanding of computer systems.
 
