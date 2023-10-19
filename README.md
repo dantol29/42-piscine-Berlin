@@ -47,7 +47,24 @@ is the last stage in the selection process for becoming a 42's student.
 	they want, which demands excellent time management skills and resiliency for not
 	"drowning" amid the massive load of work demanded by the non-stop 26-day program.
 
-| SUBJECT | LANGUAGE |
-| -------- | -------- |
-| Row 1, Column 1 | Row 1, Column 2 |
-| Row 2, Column 1 | Row 2, Column 2 |
+| SUBJECT | LANGUAGE | STATUS |
+| -------- | -------- |-------- |
+| Shell00 | Shell | 50% ✔️ |
+| Shell01 | Shell | 70% ✔️ |
+| C00 | C | 60% ✔️ |
+| C01 | C | 100% ✔️ |
+| C02 | C | 75% ✔️ |
+| C03 | C | 75% ✔️ |
+| C04 | C | 85% ✔️ |
+| C05 | C | 80% ✔️ |
+| C06 | C | 100% ✔️ |
+| C07 | C | 60% ✔️ |
+| C08 | C | 30% ❌ |
+| Rush00 | C | 120% ✔️ |
+| Rush01 | C | 0% ❌ |
+| Rush02 | C | 0% ❌ |
+| BSQ | C | 0% ❌ |
+| Exam00 | C | 100% ✔️ |
+| Exam01 | C | 100% ✔️ |
+| Exam02 | C | 80% ✔️ |
+| Exam03 | C | - |
