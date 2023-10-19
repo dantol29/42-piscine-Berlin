@@ -6,15 +6,14 @@
 /*   By: pnickl <pnickl@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 17:22:35 by pnickl            #+#    #+#             */
-/*   Updated: 2023/10/08 16:10:22 by dtolmaco         ###   ########.fr       */
+/*   Updated: 2023/10/08 23:37:47 by dtolmaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
 void	ft_putnbr(int nb);
-void	check_visible_col(int ***candidates, int **table, int count);
+void	main_check(int ***candidates, int **table, int count);
 
 
 void	check_visible(int ***candidates, int **table, int count)
@@ -41,7 +40,6 @@ void	check_visible(int ***candidates, int **table, int count)
 			visible = 1;
 			visible_reverse = 1;
 			max = candidates[k - 1][count][j];
-			//printf("%d\n", max);
 			while (j < 4)
 			{
 				if(candidates[k - 1][count][j] > max)
@@ -65,22 +63,17 @@ void	check_visible(int ***candidates, int **table, int count)
 			if (visible == table[k][0] && visible_reverse == table[k][5])
 			{
 				win_cand++;
-				//printf("%d win cand\n", win_cand);
 				append_cand = count;
-				//printf("%d visible, %d visible reverse,  %d row", visible, visible_reverse, k);
 				j = 0;
 				while (j < 4)
 				{
-					printf(" %d,", candidates[k - 1][count][j]);
 					j++;
 				}
-				printf("\n");
 			}
 			count--;
 		}
 		if (win_cand == 1)
 		{
-			//printf("%d append cand", append_cand);
 			j = 1;
 			while (j < 5)
 			{
@@ -109,10 +102,8 @@ void	print_permutations(int ***candidates)
                 		j = 0;
                			while (j < 4)
                 		{
-                        		printf("%d, ", candidates[k - 1][i][j]);
                         		j++;
                 		}
-                		printf("\n");
                 		i++;
         	}
 		k++;
@@ -168,17 +159,13 @@ void	permutations_col(int permutations[24][4], int **table)
 			{
 				if (table[j][k] != permutations[i][bla])
 					{
-						//printf("%d col: %d != %d \n", k, table[k][j], permutations[i][bla]);
 						state = 0;
 					}
-					//printf("%d col: %d == %d \n", k, table[k][j], permutations[i][bla]);
 
 			}
-				//printf("%d col: 0 == %d \n",k , permutations[i][bla]);
 			bla++;
 			j++;
 		}
-		//printf("%d = state \n", state);
 		if (state == 1)
 		{
 			win_col++;
@@ -187,7 +174,6 @@ void	permutations_col(int permutations[24][4], int **table)
 			while (bla < 4)
 			{
 				candidates_col[k - 1][count][bla] = permutations[i][bla];
-				//printf("%d add to array \n", candidates_col[k - 1][count][bla]);
 				bla++;	
 			}
 			count++;
@@ -200,16 +186,13 @@ void	permutations_col(int permutations[24][4], int **table)
 		while(j < 5)
 		{
 			table[j][k] = candidates_col[k - 1][append_count][j - 1];
-			//printf("%d cand col\n", candidates_col[k - 1][append_count][j - 1]);
 			j++;
 		}
 	}
 	k++;
 	}
-	printf("\n");
-	//check_visible_col(candidates_col, table, count);
-	//printf("permutations for col");
-	//print_permutations(candidates_col);
+	main_check(candidates_col, table, count);
+	print_permutations(candidates_col);
 
 
 }
@@ -232,6 +215,7 @@ void	permutations(int **table)
 		i++;
 	}
 	i = 0;
+
 	while (i < 4)
 	{
 		j = 0;
@@ -242,6 +226,7 @@ void	permutations(int **table)
 		}
 		i++;
 	}
+
 	int	permutations[24][4] = {{1, 2, 3, 4}, {1, 2, 4, 3}, {1, 3, 2, 4}, {1, 3, 4, 2},
 	{1, 4, 2, 3}, {1, 4, 3, 2}, {2, 1, 3, 4}, {2, 1, 4, 3}, {2, 3, 1, 4},
         {2, 3, 4, 1}, {2, 4, 1, 3}, {2, 4, 3, 1}, {3, 1, 2, 4}, {3, 1, 4, 2},
@@ -262,35 +247,28 @@ void	permutations(int **table)
 			if (table[k][j] != 0)
 			{
 				if (table[k][j] != permutations[i][bla])
-					{
-						//printf("%d row: %d != %d \n", k, table[k][j], permutations[i][bla]);
 						state = 0;
-					}
-					//printf("%d row: %d == %d \n", k, table[k][j], permutations[i][bla]);
-
 			}
-				//printf("%d row: 0 == %d \n",k , permutations[i][bla]);
 			bla++;
 			j++;
 		}
-		//printf("%d = state \n", state);
 		if (state == 1)
 		{
 			bla = 0;
 			while (bla < 4)
 			{
+				if (count == 24)
+					count--;
 				candidates[k - 1][count][bla] = permutations[i][bla];
-				//printf("%d add to array \n", candidates[count][bla]);
 				bla++;	
 			}
+
 			count++;
 		}
 		i++;
 	}
 	k++;
 	}
-	printf("\n");
-	//print_permutations(candidates);
 	check_visible(candidates, table, count);
-	//permutations_col(permutations, table);
+	permutations_col(permutations, table);
 }

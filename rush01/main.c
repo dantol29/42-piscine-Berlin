@@ -6,9 +6,11 @@
 /*   By: pnickl <pnickl@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:36:21 by pnickl            #+#    #+#             */
-/*   Updated: 2023/10/07 13:16:56 by pnickl           ###   ########.fr       */
+/*   Updated: 2023/10/08 16:15:12 by pnickl           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <unistd.h> 
 
 int	rush01(char *argv);
 
@@ -19,10 +21,8 @@ int	ft_check_arg(char *argv)
 	count = 0;
 	while (argv[count])
 		count++;
-
 	if (count != 31)
 		return (0);
-	
 	count = 0;
 	while (argv[count])
 	{
@@ -36,9 +36,8 @@ int	ft_check_arg(char *argv)
 		count++;
 	}
 	return (1);
-
 }
-#include <unistd.h>
+
 int	main(int argc, char **argv)
 {
 	if (argc == 2)
@@ -50,5 +49,4 @@ int	main(int argc, char **argv)
 	}
 	else
 		write(1, "Error\n", 6);
-}	
-
+}

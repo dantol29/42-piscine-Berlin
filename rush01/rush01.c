@@ -6,7 +6,7 @@
 /*   By: pnickl <pnickl@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 13:17:17 by pnickl            #+#    #+#             */
-/*   Updated: 2023/10/08 16:06:28 by dtolmaco         ###   ########.fr       */
+/*   Updated: 2023/10/08 23:34:51 by dtolmaco         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	fill_cols(char *argv, int **table)
 	}	
 }	
 #include <unistd.h>
-#include <stdio.h>
 #include <stdlib.h>
 
 void	ft_putnbr(int nb)
@@ -82,7 +81,7 @@ int	rush01(char *argv)
 	int	j;
 	int     memory;
 
-        i = 0;  
+        i = 0; 	
         table = (int **)malloc(sizeof(int *) * 6);
         while (i < 6)
         {
@@ -106,6 +105,14 @@ int	rush01(char *argv)
 	permutations(table);
 	check_numbers(table);
 	permutations(table);
+	check_numbers(table);
+	permutations(table);
+	check_numbers(table);
+	permutations(table);
+        check_numbers(table);
+	permutations(table);
+        check_numbers(table);
+
 	i = 0;
 	while (i < 6)
 	{
