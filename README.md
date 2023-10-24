@@ -72,4 +72,4 @@ is the last stage in the selection process for becoming a 42's student.
 | Exam00 | C | 100% ✔️ |
 | Exam01 | C | 100% ✔️ |
 | Exam02 | C | 80% ✔️ |
-| Exam03 | C | - |
+| Exam03 | C | 72% ✔️ |
